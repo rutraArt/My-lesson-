@@ -1,26 +1,18 @@
+# frozen_string_literal: true
+
 class Car
   def set_fuel(fuel)
-  	@fuel = fuel
+    @fuel = fuel
   end
 
-  def fuel
-  	@fuel
-  end
+  attr_reader :fuel, :weight, :year
 
   def set_weight(weight)
-  	@weight = weight
-  end
-
-  def weight
-  	@weight
+    @weight = weight
   end
 
   def set_year(year)
-  	@year = year
-  end
-
-  def year
-  	@year
+    @year = year
   end
 end
 
@@ -54,4 +46,3 @@ puts 'Данные грузового автомобиля:'
 puts "Тип топлива: #{truck.fuel}"
 puts "Вес: #{truck.weight}"
 puts "Год выпуска: #{truck.year}"
-
