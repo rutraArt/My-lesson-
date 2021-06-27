@@ -1,3 +1,4 @@
-sum = ARGV %w[6, 3, 7, 12, 2].to_s
+# frozen_string_literal: true
 
-puts sum
+sum = [6, 3, 7, 12, 2]
+puts sum.reduce(:+)

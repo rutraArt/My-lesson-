@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Hello
   def hello
     time = Time.now
@@ -10,8 +12,8 @@ class Hello
     else
       puts 'Добрый вечер'
     end
-  end 
+  end
 end
 
-# hello = Hello.new 
+# hello = Hello.new
 # puts hello.hello
