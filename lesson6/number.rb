@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-number = 51.to_i
+number = ARGV[0].to_i
 if number.even?
-  puts 'Четное!'
+  p 'Четное!'
 else
-  puts 'Нечетное!'
+  p 'Нечетное!'
 end

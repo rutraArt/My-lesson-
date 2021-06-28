@@ -1,16 +1,21 @@
 # frozen_string_literal: true
 
 class Hello
+  time = Time.now
+  NIGHT = ('Доброй ночи!' if (time.hour >= 0) && (time.hour < 6))
+  MORNING = ('Доброе утро!' if (time.hour >= 6) && (time.hour < 12))
+  DAY = ('Добрый день!' if (time.hour >= 12) && (time.hour < 18))
+  EVENING = 'Добрый вечер!'
+
   def hello
-    time = Time.now
-    if (time.hour >= 0) && (time.hour < 6)
-      puts 'Доброй ночи!'
-    elsif (time.hour >= 6) && (time.hour < 12)
-      puts 'Доброе утро!'
-    elsif (time.hour >= 12) && (time.hour < 18)
-      puts 'Добрый день!'
+    if NIGHT
+      puts NIGHT
+    elsif MORNING
+      puts MORNING
+    elsif DAY
+      puts DAY
     else
-      puts 'Добрый вечер'
+      puts EVENING
     end
   end
 end
