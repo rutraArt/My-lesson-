@@ -35,10 +35,14 @@
 # # puts one.class
 # puts one.to_i
 
-one = ARGV[0].to_i
-two = ARGV[1].to_i
-three = ARGV[2].to_i
-four = ARGV[3].to_i
-five = ARGV[4].to_i
+# one = ARGV[0].to_i
+# two = ARGV[1].to_i
+# three = ARGV[2].to_i
+# four = ARGV[3].to_i
+# five = ARGV[4].to_i
 
-puts one + two + three + four + five
+# puts one + two + three + four + five
+
+summ = ARGV.map(&:to_i)
+
+puts summ.sum
