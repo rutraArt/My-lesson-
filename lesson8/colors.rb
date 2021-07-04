@@ -3,19 +3,18 @@
 puts 'Введите число для определния цвета : '
 number = gets.to_i
 
-class Color
-  def color_output(out)
-    puts 'красный' if out == 1
-    puts 'оранжевый' if out == 2
-    puts 'желтый' if out == 3
-    puts 'зеленый' if out == 4
-    puts 'голубой' if out == 5
-    puts 'синий' if out == 6
-    puts 'фиолетовый' if out == 7
-    puts nil if out != (1..7)
-  end
+COLOR = {
+  1 => 'красный',
+  2 => 'оранжевый',
+  3 => 'желтый',
+  4 => 'зеленый',
+  5 => 'голубой',
+  6 => 'синий',
+  7 => 'фиолетовый'
+}.freeze
+
+def output(out)
+  COLOR[out]
 end
 
-color = Color.new
-
-print color.color_output(number)
+p output(number)
