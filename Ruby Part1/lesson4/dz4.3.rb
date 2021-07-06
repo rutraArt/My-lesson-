@@ -13,3 +13,5 @@ colors = <<HERE
 HERE
 
 p colors
+
+p colors[:green]

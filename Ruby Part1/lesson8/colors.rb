@@ -17,4 +17,4 @@ def output(out)
   COLOR[out]
 end
 
-p output(number)
+puts output(number)
