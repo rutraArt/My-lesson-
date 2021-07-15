@@ -1,34 +1,14 @@
+# frozen_string_literal: true
+
 colors = []
 
-print 'Пожалуйста напишите цвета: '
-value = gets.strip
-
-colors << value 
-
-print 'Пожалуйста напишите дополнительный цвет: '
-
-value = gets.strip
-
-colors << value
-
-colors.map do
-  print "Для выхода из программы напишите слово 'stop': "
+loop do
+  print 'Пожалуйста напишите цвета: '
   value = gets.strip
-  break if (value.eql? 'stop')#value == ('stop')
+  break if value == 'stop'
+
+  puts "Для завершения напишите 'stop' либо добавьте еще цвета. "
   colors << value
-end 
+end
 
 p colors.uniq.sort
-
-
-
-# color.map.select { |x| x.uniq} 
-#   # color.select { |x| x.uniq}
-  
-#   # col.each{ |e|  value[e] == value}.to_s
-#   # select if 
-
-# #   break if color == ('stop')
-# # end
-
-# puts color

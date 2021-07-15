@@ -1,12 +1,14 @@
+# frozen_string_literal: true
 
-print 'Пожалуйста напишите цвета: '
-color = gets.split.each(&:to_s)
+colors = []
 
-print 'Пожалуйста напишите дополнительный цвет: '
-dop = gets.split.each(&:to_s)
+loop do
+  print 'Пожалуйста напишите цвета: '
+  value = gets.chomp
+  break if value == 'stop'
 
-dop.each do
-  print "Для выхода из программы напишите слово 'stop': "
-  break if dop == gets('stop')
-  puts "Введенные цвета: #{color + dop}"
-end 
+  puts "Для завершения напишите 'stop' либо добавьте еще цвета. "
+  colors << value
+end
+
+p colors
