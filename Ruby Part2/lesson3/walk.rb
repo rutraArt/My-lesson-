@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def walk(arr, &block)
   arr.each do |value|
     case value
