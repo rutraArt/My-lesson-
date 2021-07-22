@@ -3,7 +3,11 @@
 class Week
   DAYS = %w[Понедельник Вторник Среда Четверг Пятница Суббота Воскресенье].freeze
 
-  def each
-    yield DAYS
+  # def each
+  #   DAYS.map{ |x| yield x}
+  # end
+
+  def each(&block)
+    DAYS.map(&block)
   end
 end
