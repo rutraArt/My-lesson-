@@ -1,21 +1,32 @@
 # frozen_string_literal: true
 
 class Factory
-  def build; end
-
-  def total
-    all = @all
-    all.each { |value| value + value }
+  def initialize
+    @teddy_bear = TeddyBear.new
+    @ball = Ball.new
+    @cube = Cube.new
+    @all = { teddy_bear: @teddy_bear.quantity,
+             ball: @ball.quantity,
+             cube: @cube.quantity }
   end
 
   def offers
-    teddy_bear = @teddy_bear = TeddyBear.new
-    ball = @ball = Ball.new
-    cube = @cube = Cube.new
-    all = { teddy_bear: teddy_bear.quantity,
-            ball: ball.quantity,
-            cube: cube.quantity }
-    p all.class
+    @all
+  end
+
+  def build(value)
+    case value
+    when :ball
+      @ball.class
+    when :cube
+      @cube.class
+    when :teddy_bear
+      @teddy_bear.class
+    end
+  end
+
+  def total
+    print "Всего сделанно игрушек: #{@all.values.reduce(:+)} шт."
   end
 
   class TeddyBear
@@ -36,6 +47,3 @@ class Factory
     end
   end
 end
-
-x = Factory.new
-p x.offers
